@@ -30,6 +30,20 @@ const compararRostros = () => {
 
 };
 
+const changeImg = (e, ele, target) => {
+
+    const eleTarget =  document.getElementById(target);
+    const archivos = ele.files;
+    if (!archivos || !archivos.length) {
+        eleTarget.src = "";
+        return;
+    }
+
+    const primerArchivo = archivos[0];
+    const objectURL = URL.createObjectURL(primerArchivo);
+    eleTarget.src = objectURL;
+}
+
 const init = () => {
     detectarRostros();
     compararRostros();

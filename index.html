@@ -17,12 +17,15 @@
     <br>
     <h1>Comparar Rostros</h1>
     <form id="formCompare" enctype="multipart/form-data" method="post" action="http://localhost:8080/compareFaces">
-      <input type="file" name="file1" />
+      <input type="file" name="file1" onchange="changeImg(event, this, 'imagenPrevisualizacion1')"/>
       <br>
-      <input type="file" name="file2" />
+      <input type="file" name="file2" onchange="changeImg(event, this, 'imagenPrevisualizacion2')" />
       <br />
       <input type="submit" value="Detectar Rostros" />
     </form>
+    <br>
+    <img id="imagenPrevisualizacion1" style="width:100px;height:100px;">
+    <img id="imagenPrevisualizacion2" style="width:100px;height:100px;">
     <div id="resultsCompare"></div>
     <script src="index.js"></script>
   </body>
